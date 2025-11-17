@@ -60,14 +60,42 @@ Step 7: Save Your Work
 
 
 # Code:
+```
+int sensorState = 0;
 
+void setup()
+{
+  pinMode(2, INPUT);
+  pinMode(13, OUTPUT);
+  Serial.begin(9600);
 
+}
 
+void loop()
+{
+  // read the state of digital input pin 2
+  sensorState = digitalRead(2);
+  // check digital pin 2 is HIGH. if it is, set the
+  // LED on.
+  if (sensorState == HIGH) {
+    digitalWrite(13, HIGH);
+    Serial.println("Sensor activated!");
+  } else {
+    digitalWrite(13, LOW);
+     Serial.println("Sensor Deactivated!");
+  }
+  delay(10); 
+}
+
+```
 # Output:
-
-
-
+<img width="1536" height="598" alt="Brave Krunk" src="https://github.com/user-attachments/assets/3c4a95e4-ae07-453b-ad0e-edf2ec4c17c4" />
 
 # Result:
+
+
+
+https://github.com/user-attachments/assets/80825b27-c5de-4f4f-9c4c-057277c80aba
+
 The PIR sensor successfully detected motion and triggered the Arduino to turn ON the built-in LED. The LED remained OFF when no motion was present, confirming correct circuit and code functionality.
 
